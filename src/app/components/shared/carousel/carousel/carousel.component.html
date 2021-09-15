@@ -1,0 +1,14 @@
+<div class="text-xl-center carousel-item-personalized">
+    
+    <carousel [noWrap]="noWrapSlides"  >
+        
+        <slide *ngFor="let artist of artists">
+            <img [src]="artist.img" alt="image slide" class="carousel-item-personalized" >
+            <div class="carousel-caption">
+                <!-- <p>{{artist.name}}</p> -->
+            </div>
+        </slide>
+
+    </carousel>
+    
+</div>

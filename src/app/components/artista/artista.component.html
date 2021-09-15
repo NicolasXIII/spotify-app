@@ -1,0 +1,99 @@
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div class="row mt-5" *ngIf="!loading">
+    <div class="col-30% ml-5">
+        <img [src]="artist.images | noImage: 1">
+    </div>
+
+    <div class="col">
+        <h2 class="text-center">{{ artist.name }}</h2>
+
+        <div class="mt-4">
+            <h4 class="mb-4">Información</h4>
+
+            <!-- info -->
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col">
+                        <th>Popularidad</th>
+                    </div>
+                    <div class="col">
+                        {{ artist.popularity }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <th>Seguidores</th>
+                    </div>
+                    <div class="col">
+                        {{ artist.followers.total }}
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col">
+                        <th>
+                            Géneros</th>
+                    </div>
+                    <div class="col">
+
+                        <ng-container *ngFor="let genre of artist.genres; let index = index">
+                            <div class="row">
+                                <th>{{ index + 1 }}</th>. {{ genre }}
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <hr class="mt-5">
+
+            <p>
+                <a [href]=artist.external_urls target="_blank">
+                    Acceder a la pagina del artista
+                </a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- TABLA TOP TRACKS -->
+<div class="row m-5">
+    <div *ngIf="!loading" class="text-center container m-5">
+
+        <h1 class="mb-5">
+            TOP Tracks
+            <hr>
+
+        </h1>
+
+        <app-table [data]='traks' [headers]='headers' [table]='tableArtist'></app-table>
+
+    </div>
+</div>
+
+
+<!-- ALBUMS -->
+<div class="row m-5">
+    <div *ngIf="!loading" class="text-center container m-5">
+
+        <h1 class="mb-5">
+            Albums
+            <hr>
+        </h1>
+
+        <!-- carrusel de discos con los albums -->
+        <app-swiper-vinyl-disk [artistID]="artist.id" [albums]="albums"></app-swiper-vinyl-disk>
+        <!-- tabla de canciones del album -->
+
+    </div>
+</div>

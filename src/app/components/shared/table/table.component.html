@@ -1,0 +1,191 @@
+<div class="container">
+
+    <table class="table table-dark table-hover">
+
+        <!-- HEADERS -->
+        <thead>
+            <tr>
+                <th *ngFor="let header of headers" [appSort]="data" data-order="desc" [attr.data-name]="header.name"
+                    scope="col">
+                    {{ header.name }}
+                    <button class="btn btn-dark btn-sm" [appSort]="data" [attr.data-name]='header.value'>
+                        ⇋
+                    </button>
+                </th>
+                <!-- cabecera vacia. para alargar la tabla en caso de botones -->
+                <th *ngIf="buttons?.length"></th>
+            </tr>
+        </thead>
+
+
+
+
+
+
+
+        <!-- TABLA DE ARTISTA -->
+        <ng-container *ngIf="table == 'artist'; then artistTable"></ng-container>
+        <ng-template #artistTable>
+            <tbody>
+                <tr *ngFor="let item of data; let indexD = index ">
+                    <td>
+                        {{ indexD + 1 }}
+                    </td>
+
+                    <td>
+                        {{ item.name }}
+                    </td>
+
+                    <td>
+                        {{ item.album.name }}
+                    </td>
+
+                    <td>
+                        <iframe [src]="item.id | domseguro" width="300" height="80" frameborder="0"
+                            allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </ng-template>
+
+
+
+        <!-- TABLA DE CANCIONES -->
+        <ng-container *ngIf="table == 'traks'; then tracksTable"></ng-container>
+        <ng-template #tracksTable>
+            <tbody>
+                <tr *ngFor="let item of data; let indexD = index ">
+                    <td>
+                        {{ indexD + 1 }}
+                    </td>
+
+                    <td>
+                        {{ item.name }}
+                    </td>
+
+                    <td>
+                        <!-- {{ item.artists[0].name }} -->
+                        <div *ngFor="let artist of item.artists">
+                            {{ artist.name }}
+                        </div>
+                    </td>
+
+                    <td>
+                        {{ item.album.name }}
+                    </td>
+
+
+                    <td>
+                        {{ item.popularity }}
+                    </td>
+
+                    <td>
+                        <iframe [src]="item.id | domseguro" width="300" height="80" frameborder="0"
+                            allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </ng-template>
+
+
+        <!-- TABLA DE ALBUM  -->
+        <ng-container *ngIf="table == 'album'; then albumTable"></ng-container>
+        <ng-template #albumTable>
+            <tbody>
+                <tr *ngFor="let item of data; let indexD = index ">
+                    <td>
+                        {{ indexD + 1 }}
+                    </td>
+
+                    <td>
+                        {{ item.name }}
+                    </td>
+
+                    <td>
+                        {{ item.popularity }}
+                    </td>
+
+                    <td>
+                        <iframe [src]="item.id | domseguro" width="300" height="80" frameborder="0"
+                            allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </ng-template>
+
+    </table>
+</div>
+
+
+
+<!-- swich
+    
+                <div [ngSwitch]="table">
+            <div *ngSwitchCase="table === 'artist'">
+
+                <ng-container *ngIf="table == 'artist'; then artistTable"></ng-container>
+                <ng-template #artistTable>
+                    <tbody>
+                        <tr *ngFor="let item of data; let indexD = index ">
+                            <td>
+                                {{ indexD +1 }}
+                            </td>
+
+                            <td>
+                                {{ item.name }}
+                            </td>
+
+                            <td>
+                                {{ item.album.name }}
+                            </td>
+
+                            <td>
+                                <iframe [src]="item.id | domseguro" width="300" height="80" frameborder="0"
+                                    allowtransparency="true" allow="encrypted-media"></iframe>
+                            </td>
+                        </tr>
+                    </tbody>
+                </ng-template>
+
+            </div>
+
+            <div *ngSwitchCase="table === 'tracks'">
+
+                <ng-container *ngIf="table == 'traks'; then artistTable"></ng-container>
+                <ng-template #artistTable>
+                    <tbody>
+                        <tr *ngFor="let item of data; let indexD = index ">
+                            <td>
+                                {{ indexD + 1 }}
+                            </td>
+
+                            <td>
+                                {{ item.name }}
+                            </td>
+
+                            <td>
+                                {{ item.artist[0].name }}
+                            </td>
+
+                            <td>
+                                {{ item.album.name }}
+                            </td>
+
+
+                            <td>
+                                {{ item.popularity }}
+                            </td>
+
+                            <td>
+                                <iframe [src]="item.id | domseguro" width="300" height="80" frameborder="0"
+                                    allowtransparency="true" allow="encrypted-media"></iframe>
+                            </td>
+                        </tr>
+                    </tbody>
+                </ng-template>
+
+            </div>
+
+            <div *ngSwitchDefault></div>
+        </div>
+-->

@@ -1,0 +1,44 @@
+<h1 class="container mt-5 text-center">Sagasu</h1>
+
+<!-- FORMULARIO DE BUSQUEDA -->
+<form [formGroup]="searchForm" class="container mt-5">
+    <div class="row">
+
+        <div class="col">
+            <!-- #termino va pillando lo que escribes y se lo metes a buscar -->
+            <input class="form-control" #trackSearched (keyup)="buscar()" type="text" formControlName="track"
+                placeholder="Aquello que ansias se encuentra aqui">
+        </div>
+        <div class="col">
+            <input class="form-control" #artistSearched (keyup)="buscar()" type="text" formControlName="artist"
+                placeholder="Artista">
+        </div>
+    </div>
+</form>
+
+<app-spinner *ngIf="loading"></app-spinner>
+<app-error *ngIf="error.flag" [error]='error'></app-error>
+
+
+<!-- BUSQUEDA -->
+<div>
+
+    <ng-container *ngIf="!searchArtist?.length  && !searchTracks?.length; then noBusqueda else busquedas"></ng-container>
+    <ng-template #noBusqueda></ng-template>
+
+    <ng-template #busquedas>
+
+        <!-- B. ARTISTAS -->
+        <ng-container *ngIf="searchArtist?.length  && !searchTracks?.length; then busquedaArtist else busquedaTracks"></ng-container>
+
+        <ng-template #busquedaArtist>
+            <app-cards-asymmetric class="m-5" [cards]="searchArtist" type="artists"></app-cards-asymmetric>
+        </ng-template>
+
+        <!-- B. CANCIONES o cross-search-->
+        <ng-template #busquedaTracks>
+            <app-table class="m-5" [headers]="searchTracksHeaders" [data]="searchTracks" [table]="table"></app-table>
+        </ng-template>
+    </ng-template>
+
+</div>

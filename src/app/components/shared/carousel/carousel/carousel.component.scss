@@ -1,0 +1,17 @@
+.carousel-item-personalized {
+
+    /* 600 porque es el tamaño max de las imagenes que vienen de spotify */
+
+    /* height: fit-content; */
+    align-items: center;
+    text-align: center;
+
+    /* evita la distorsion */
+    background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+
+    height: 600px;
+    background-size: cover;
+  }

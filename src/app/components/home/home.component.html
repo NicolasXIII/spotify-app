@@ -1,0 +1,42 @@
+<app-carousel></app-carousel>
+
+<div class="container top-30">
+	<div class="row">
+		<div class="col-md-4 text-center">
+			<img src="./../assets/img/music.png" alt="">
+			<hr>
+			<h3>Música</h3>
+		</div>
+		<div class="col-md-4 text-center">
+			<img src="./../assets/img/artist.png" alt="">
+			<hr>
+			<h3>Artistas</h3>
+		</div>
+		<div class="col-md-4 text-center">
+			<img src="./../assets/img/album.png" alt="">
+			<hr>
+			<h3>Albums</h3>
+		</div>
+	</div>
+</div>
+
+
+
+
+<app-spinner *ngIf="loading"></app-spinner>
+<app-error *ngIf="error.flag" [error]='error'></app-error>
+
+
+
+
+<!-- NEW RELEASES -->
+<div *ngIf="newSongs?.length">
+
+	<h1 class="text-center mb-5 mt-5">
+		New Releases
+		<hr>
+	</h1>
+
+	<app-cards-asymmetric [cards]='newSongs'></app-cards-asymmetric>
+
+</div>

@@ -1,0 +1,92 @@
+<!-- https://www.youtube.com/watch?v=wEfaoAa99XY&t=1337s&ab_channel=CodingLab -->
+
+<div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus icon'></i>
+        <!-- <i class="fab fa-galactic-senate"></i> -->
+        <div class="logo_name">Resonancia</div>
+        <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+        <!-- <li>
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search...">
+            <span class="tooltip">Search</span>
+        </li> -->
+        <!-- <li>
+            <a href="#">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+        </li> -->
+        <li>
+            <a href="#">
+                <i class='bx bx-music'></i>
+                <span class="links_name">Biblioteca</span>
+            </a>
+            <span class="tooltip">Biblioteca</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-user-voice'></i>
+                <span class="links_name">Siguiendo</span>
+            </a>
+            <span class="tooltip">Siguiendo</span>
+        </li>
+        <li>
+            <a [routerLink]="['search']" routerLinkActive="router-link-active" aria-current="page">
+                <i class='bx bx-search-alt-2' ></i>
+                <span class="links_name">Buscar</span>
+            </a>
+            <span class="tooltip">Buscar</span>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-line-chart' ></i>
+                <span class="links_name">Analytics</span>
+            </a>
+            <span class="tooltip">Analytics</span>
+        </li>
+        <!-- <li>
+            <a href="#">
+                <i class='bx bx-cart-alt'></i>
+                <span class="links_name">Order</span>
+            </a>
+            <span class="tooltip">Order</span>
+        </li> -->
+        <!-- <li>
+            <a href="#">
+                <i class='bx bx-heart'></i>
+                <span class="links_name">Saved</span>
+            </a>
+            <span class="tooltip">Saved</span>
+        </li> -->
+        <li>
+            <a href="#">
+                <i class='bx bx-cog'></i>
+                <span class="links_name">Opciones</span>
+            </a>
+            <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile">
+            <div class="profile_details">
+                <img src="../../../../assets/img/Sukarita.jfif" alt="">
+                <div class="name_job">
+                    <div class="name"> Ryomen Sukuna </div>
+                    <div class="job"> Rey de las maldiciones </div>
+                </div>
+            </div>
+            <i class='bx bx-log-out' id="log_out"></i>
+        </li>
+    </ul>
+</div>
+
+
+<section class="home-section">
+    <app-navbar></app-navbar>
+
+    <router-outlet></router-outlet>
+    
+    <app-footer></app-footer>
+</section>

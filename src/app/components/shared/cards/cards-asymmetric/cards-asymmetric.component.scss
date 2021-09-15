@@ -1,0 +1,31 @@
+.letraTarjetasTitulo{
+    font-size: 30px;
+}
+
+.letraTarjetas{
+    font-size: 23px;
+}
+
+
+.margen-alrededor{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* no va */
+.centrarArtistas{
+    display: block;
+    align-items: center;
+}
+
+/* lineas html <hr> blancas */
+hr {
+    border-color: white !important;
+}
+
+/* margen de 30 pixeles */
+.top-30 {
+    margin-top: 30px;
+}

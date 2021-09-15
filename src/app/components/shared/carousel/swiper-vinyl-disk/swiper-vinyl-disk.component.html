@@ -1,0 +1,44 @@
+<swiper [effect]="'coverflow'" [grabCursor]="true" [centeredSlides]="true" [slidesPerView]="'auto'" [loop]="true"
+  [coverflowEffect]="{
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true
+    }" [pagination]="true" class="mySwiper">
+
+
+    
+
+  <ng-container *ngFor="let item of albums; let index = index">
+
+    <ng-template swiperSlide><img [src]="albums[index].images | noImage : 1" /></ng-template>
+
+
+    <!-- cosas relativas al album -->
+    <div>
+      -----------------------------{{ index }} ---------------------------------------------------
+    </div>
+    <!-- <app-table table='album' [data]='tracksOfAlbum'></app-table> -->
+
+
+
+
+
+
+  </ng-container>
+
+  
+
+</swiper>
+
+<div class="container">
+
+  <h1>Post For</h1>
+  <p>
+    
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, blanditiis! Officiis provident labore sint
+    illum numquam molestias fuga perspiciatis voluptas ab a illo, voluptatem et facilis animi ullam suscipit
+    molestiae.</p>
+
+</div>
