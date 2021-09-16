@@ -23,6 +23,7 @@ import { SwiperVinylDiskComponent } from './carousel/swiper-vinyl-disk/swiper-vi
 import { SwiperModule } from 'swiper/angular';
 import { SideBarComponent } from "./side-bar/side-bar.component";
 import { CardsSymmetricComponent } from './cards/cards-symmetric/cards-symmetric.component';
+import { CardsChangeSymmetryComponent } from './cards/cards-change-symmetry/cards-change-symmetry.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +40,7 @@ import { CardsSymmetricComponent } from './cards/cards-symmetric/cards-symmetric
         SwiperVinylDiskComponent,
         SideBarComponent,
         CardsSymmetricComponent,
+        CardsChangeSymmetryComponent,
     ],
     imports: [
         FormsModule,
@@ -65,7 +67,8 @@ import { CardsSymmetricComponent } from './cards/cards-symmetric/cards-symmetric
         ErrorComponent,
         SwiperVinylDiskComponent,
         SideBarComponent,
-        CardsSymmetricComponent
+        CardsSymmetricComponent,
+        CardsChangeSymmetryComponent,
     ],
     providers: [],
 })

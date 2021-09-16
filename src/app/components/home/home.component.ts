@@ -9,9 +9,9 @@ import { ErrorComponent } from '../shared/alert/error/error.component';
 })
 export class HomeComponent implements OnInit {
 
-	newSongs: any[] = [];
-	loading: boolean = false;
-	cardsSymmetry : boolean = false;
+	newSongs : any[] = [];
+	loading : boolean = false;
+	
 
 	error: any = [
 		{ 

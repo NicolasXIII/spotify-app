@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardsSymmetricComponent implements OnInit {
 
   @Input() cards!: any[];
-  type!: string;
+  @Input() type!: string;
 
   constructor() { }
 

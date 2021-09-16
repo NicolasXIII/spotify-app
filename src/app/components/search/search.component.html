@@ -32,7 +32,8 @@
         <ng-container *ngIf="searchArtist?.length  && !searchTracks?.length; then busquedaArtist else busquedaTracks"></ng-container>
 
         <ng-template #busquedaArtist>
-            <app-cards-asymmetric class="m-5" [cards]="searchArtist" type="artists"></app-cards-asymmetric>
+            <!-- <app-cards-asymmetric class="m-5" [cards]="searchArtist" type="artists"></app-cards-asymmetric> -->
+            <app-cards-change-symmetry class="m-5" [cards]="searchArtist" type="artists"></app-cards-change-symmetry>
         </ng-template>
 
         <!-- B. CANCIONES o cross-search-->
