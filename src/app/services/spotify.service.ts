@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 
 @Injectable({
@@ -9,7 +8,7 @@ import { map } from 'rxjs/operators'
 export class SpotifyService {
 
 	market!: string;
-	private _token = 'BQD1mLGMOKqBKqmWXnxDd4xd3cTN0FS3c3Ph87TlzUTvoaLjM5PF-MVlkOt4BqLaC1HlXktwT-8rwTN_j5s';
+	private _token = 'BQA5j2xa4jU32Q35mWf8NpMyceDjCBOEwQoqhG49QXplmvh1YOXhYhedg71sYGU2Cp7Ut1wJV0XTudpZrig';
 	private _headers = new HttpHeaders(
 		{
 			Authorization: 'Bearer ' + this._token

@@ -2,10 +2,11 @@
 
 <div class="sidebar">
     <div class="logo-details">
-        <i class='bx bxl-c-plus-plus icon'></i>
-        <!-- <i class="fab fa-galactic-senate"></i> -->
-        <div class="logo_name">Resonancia</div>
-        <i class='bx bx-menu' id="btn"></i>
+        <a [routerLink]="['home']" routerLinkActive="router-link-active" aria-current="page">
+            <i class='bx bxl-audible icon'></i>
+            <div class="logo_name">Resonancia</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </a>
     </div>
     <ul class="nav-list">
         <!-- <li>
@@ -36,14 +37,14 @@
         </li>
         <li>
             <a [routerLink]="['search']" routerLinkActive="router-link-active" aria-current="page">
-                <i class='bx bx-search-alt-2' ></i>
+                <i class='bx bx-search-alt-2'></i>
                 <span class="links_name">Buscar</span>
             </a>
             <span class="tooltip">Buscar</span>
         </li>
         <li>
             <a href="#">
-                <i class='bx bx-line-chart' ></i>
+                <i class='bx bx-line-chart'></i>
                 <span class="links_name">Analytics</span>
             </a>
             <span class="tooltip">Analytics</span>
@@ -87,6 +88,6 @@
     <app-navbar></app-navbar>
 
     <router-outlet></router-outlet>
-    
+
     <app-footer></app-footer>
 </section>

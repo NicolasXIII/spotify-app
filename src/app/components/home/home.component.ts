@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
 
 	newSongs: any[] = [];
 	loading: boolean = false;
+	cardsSymmetry : boolean = false;
 
 	error: any = [
 		{ 

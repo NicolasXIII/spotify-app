@@ -1,0 +1,87 @@
+<div class="container animated fadeIn">
+
+    <!-- <div class="row">
+        <div *ngFor="let card of cards; let i = index">
+            <div class="card margen-alrededor" style="background: rgb(75, 6, 6);">
+
+                <img class="card-img-top" [src]="card?.images | noImage">
+                <div class="card-body">
+
+
+                    <ng-container *ngIf="type ==='artists'; then artistsWay else newReleasesWay"></ng-container>
+                    <ng-template #artistsWay>
+                        <h5 class="card-title text-center letraTarjetasTitulo" role="button" [routerLink]="['/artist/', card.id]">
+                            {{ card?.name }}
+                        </h5>
+                    </ng-template>
+
+                    <ng-template #newReleasesWay>
+                        <h5 class="card-title text-center letraTarjetasTitulo">
+                            {{ card?.name }}
+                        </h5>
+                        <p class="card-text align-center letraTarjetas">
+
+                            <span *ngFor="let artist of card?.artists" class="badge bg-dark mx-1" role="button"
+                                [routerLink]="['/artist/', artist.id]">
+
+                                {{ artist.name }}
+                            </span>
+                        </p>
+                    </ng-template>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+    <div class="cards">
+
+        <ng-container *ngFor="let card of cards">
+            <div class="card margen-alrededor" style="background: rgb(15, 14, 22);">
+                <img class="card-img-top " [src]="card?.images | noImage">
+
+                <div class="card-body card__content">
+
+
+                    <ng-container *ngIf="type ==='artists'; then artistsWay else newReleasesWay"></ng-container>
+                    <ng-template #artistsWay>
+                        <h5 class="card-title text-center letraTarjetasTitulo" role="button"
+                            [routerLink]="['/artist/', card.id]">
+                            {{ card?.name }}
+                        </h5>
+                    </ng-template>
+
+                    <ng-template #newReleasesWay>
+                        <h5 class="card-title text-center letraTarjetasTitulo">
+                            {{ card?.name }}
+                        </h5>
+                        <p class="card-text align-center letraTarjetas">
+
+                            <span *ngFor="let artist of card?.artists" class="badge bg-dark mx-1" role="button"
+                                [routerLink]="['/artist/', artist.id]">
+
+                                {{ artist.name }}
+                            </span>
+                        </p>
+                    </ng-template>
+
+
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>

@@ -14,7 +14,6 @@ import { CarouselConfig } from 'ngx-bootstrap/carousel';
 				isAnimated     : true,
 				pauseOnFocus   : false,
 				showIndicators : true,
-				
 			}
 		}
 	],
