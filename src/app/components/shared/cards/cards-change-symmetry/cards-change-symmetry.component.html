@@ -1,6 +1,6 @@
 <!-- boton para cambiar las cards, de foma que sean simetricas a asimetricas -->
 <div class="text-right">
-    <ng-container *ngIf="cardsSymmetry; then btnAsymmetry else btnSymmetry"></ng-container>
+    <ng-container *ngIf="cardsSymmetry; then btnSymmetry else btnAsymmetry"></ng-container>
     <ng-template #btnSymmetry>
         <button class="boton_switch_simetria" (click)="cardsSymmetry = !cardsSymmetry">
             <img src="../../../assets/img/botton simetria cards.png">
