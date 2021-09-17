@@ -8,37 +8,24 @@
     }" [pagination]="true" class="mySwiper">
 
 
-    
 
   <ng-container *ngFor="let item of albums; let index = index">
 
-    <ng-template swiperSlide><img [src]="albums[index].images | noImage : 1" /></ng-template>
+    <ng-template swiperSlide>
+      <img [src]="albums[index].images | noImage : 1" />
+
+      <h2 class="mt-3">{{ item.name }}</h2>
 
 
-    <!-- cosas relativas al album -->
-    <div>
-      -----------------------------{{ index }} ---------------------------------------------------
-    </div>
-    <!-- <app-table table='album' [data]='tracksOfAlbum'></app-table> -->
-
-
-
-
-
+    </ng-template>
 
   </ng-container>
 
-  
-
 </swiper>
 
-<div class="container">
-
-  <h1>Post</h1>
-  <p>
-    
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, blanditiis! Officiis provident labore sint
-    illum numquam molestias fuga perspiciatis voluptas ab a illo, voluptatem et facilis animi ullam suscipit
-    molestiae.</p>
-
-</div>
+<!-- hacer que la tabla vaya cambiando en funcion de el album activo
+metodo:
+  hacer que cuando se pase la foto, se llame a la funcion SwiperPass y esta hace una peticion con el sig album -->
+<ng-container *ngIf="data">
+  <app-table table="album" [headers]="headers" [data]="data"></app-table>
+</ng-container>

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators'
 export class SpotifyService {
 
 	market!: string;
-	private _token = 'BQA5j2xa4jU32Q35mWf8NpMyceDjCBOEwQoqhG49QXplmvh1YOXhYhedg71sYGU2Cp7Ut1wJV0XTudpZrig';
+	private _token = 'BQCwe4tW93id2OEnCqLOMxffWbXnIxZVFASlmpQSUc5KSl3XfzbOoibPj1K4cwqGFUIw7GAGu7mPBuMNBGg';
 	private _headers = new HttpHeaders(
 		{
 			Authorization: 'Bearer ' + this._token
@@ -140,6 +140,17 @@ export class SpotifyService {
 		} else {
 			return this.getQuery('me/top/' + 'artist%2Ctrack')
 		}
+	}
+
+	getAlbumSongs(id: string){
+		return this.getQuery('albums/'+ id +'/tracks?limit=50');		
+	}
+
+	getAlbumSongs2(){
+		const result = this.getQuery('albums/'+ '4aawyAB9vmqN3uQ7FjRGTy' +'/tracks?limit=10');
+		result.toPromise();
+		console.log(result);
+		return result;
 	}
 
 }
